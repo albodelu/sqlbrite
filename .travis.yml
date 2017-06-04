@@ -12,6 +12,9 @@ android:
 jdk:
   - oraclejdk8
 
+script:
+  - travis_wait 20 ./gradlew build connectedCheck
+
 after_success:
   - .buildscript/deploy_snapshot.sh
 
